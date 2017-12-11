@@ -266,7 +266,7 @@
       var clickedMe = function(){
         console.log("Clicked");
         jQuery.get('../assets/LG7/writeups/sen1.txt', function(data) {
-            var name = data.replace(/\&dude=([^&]*)\&/g, "&1");
+            var name = data.replace(/\&dude=([^&]*)\&/g, "\1");
             alert(data);
             console.log(name);
         });
