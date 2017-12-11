@@ -266,7 +266,8 @@
         console.log("Clicked");
         jQuery.get('../assets/LG7/writeups/sen1.txt', function(data) {
             var name = data.match(/\&dude=([^&]*)\&/g, "\1");
-            alert(data);
+            name = data.replace(regex, function(match, $1, offset, original) {
+              return $1; });
             console.log(name[0]);
         });
       };
