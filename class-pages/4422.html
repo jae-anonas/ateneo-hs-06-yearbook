@@ -261,10 +261,14 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
+      var regEx = "/\&dude=([^&]*)\&/g";
+
       var clickedMe = function(){
         console.log("Clicked");
         jQuery.get('../assets/LG7/writeups/sen1.txt', function(data) {
+            var name = data.replace(/\&dude=([^&]*)\&/g, "&1");
             alert(data);
+            console.log(name);
         });
       };
     </script>
