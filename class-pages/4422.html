@@ -271,20 +271,20 @@
         jQuery.get('../assets/LG'+lg+'/writeups/sen'+num+'.txt', function(data) {
               data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
                 name = $1;
-                // console.log($1);
+                console.log($1);
               });
 
               data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
                 writeup = $1;
-                // console.log($1);
+                console.log($1);
               });
 
               data.replace(/\&orgs=([^&]*)\&/g, function(match, $1, offset, original) {
                 orgs = $1;
-                // console.log($1);
+                console.log($1);
               });
 
-              console.log(name + "\n" + writeup + "\n" + orgs);
+              alert(name + "\n" + writeup + "\n" + orgs);
         });
       };
     </script>
