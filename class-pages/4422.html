@@ -46,7 +46,7 @@
       <div class="row text-center text-lg-left">
 
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100" onclick="clickedMe()">
+          <a href="#" class="d-block mb-4 h-100" onclick="clickedMe(7,1)">
             <img class="img-fluid img-thumbnail" src="../assets/LG7/formal/sen1.jpg" alt="">
           </a>
         </div>
@@ -262,12 +262,21 @@
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
 
-      var clickedMe = function(){
+      var clickedMe = function(lg,num){
         console.log("Clicked");
-        jQuery.get('../assets/LG7/writeups/sen1.txt', function(data) {
-            var name = data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
-              return $1; });
-            console.log(name);
+        var name;
+        var writeup;
+        var orgs;
+
+        jQuery.get('../assets/LG'+lg+'/writeups/sen'+num+'.txt', function(data) {
+              data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
+              console.log($1); });
+
+              data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
+              console.log($1); });
+
+              data.replace(/\&orgs=([^&]*)\&/g, function(match, $1, offset, original) {
+              console.log($1); });
         });
       };
     </script>
