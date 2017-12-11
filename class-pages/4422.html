@@ -46,7 +46,7 @@
       <div class="row text-center text-lg-left">
 
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
+          <a href="#" class="d-block mb-4 h-100" onclick="clickedMe()">
             <img class="img-fluid img-thumbnail" src="../assets/LG7/formal/sen1.jpg" alt="">
           </a>
         </div>
@@ -258,8 +258,16 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var clickedMe = function(){
+        console.log("Clicked");
+        jQuery.get('../assets/LG7/writeups/sen1.txt', function(data) {
+            alert(data);
+        });
+      };
+    </script>
 
   </body>
 
