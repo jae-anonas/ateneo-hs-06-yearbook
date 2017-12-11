@@ -270,13 +270,19 @@
 
         jQuery.get('../assets/LG'+lg+'/writeups/sen'+num+'.txt', function(data) {
               data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
-              console.log($1); });
+                name = $1;
+                console.log($1);
+              });
 
               data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
-              console.log($1); });
+                writeup = $1;
+                console.log($1);
+              });
 
               data.replace(/\&orgs=([^&]*)\&/g, function(match, $1, offset, original) {
-              console.log($1); });
+                orgs = $1;
+                console.log($1);
+              });
         });
       };
     </script>
