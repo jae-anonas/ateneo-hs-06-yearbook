@@ -260,6 +260,34 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+      var clickedMe = function(lg,num){
+        console.log("Clicked");
+        var name;
+        var writeup;
+        var orgs;
+
+        jQuery.get('../assets/LG'+lg+'/writeups/sen'+num+'.txt', function(data) {
+              data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
+                name = $1;
+                console.log($1);
+              });
+
+              data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
+                writeup = $1;
+                console.log($1);
+              });
+
+              data.replace(/\&orgs=([^&]*)\&/g, function(match, $1, offset, original) {
+                orgs = $1;
+                console.log($1);
+              });
+
+              alert(name + "\n" + writeup + "\n" + orgs);
+        });
+      };
+    </script>
 
   </body>
 
