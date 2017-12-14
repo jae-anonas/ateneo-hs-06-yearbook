@@ -41,13 +41,32 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h1 class="my-4 text-center text-lg-left">LG 4422</h1>
+      <h1 class="my-4 text-center text-lg-left">LG 4222</h1>
 
-      <div class="row text-center text-lg-left">
-        <div class="row">
-            <div class="col-md-2 col-md-offset-5">
-              <img class="img-fluid" src="assets/LG1/class/lg4422.jpg" alt="">
-            </div>
+      <div class="row">
+        <div class="col-centered">
+          <img class="rounded border-1 py-1 px-1 bg-dark" src="../assets/LG7/class/lg4422.jpg" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-centered">
+          <h6 id="writeup">
+            TAGS
+          </h6>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-centered">
+            <img class="rounded-circle border-1 px-1 py-1 bg-dark" src="../assets/LG7/class/moderatr.jpg" alt="">
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-centered">
+          <h6 id="tags">
+            TAGS
+          </h6>
         </div>
       </div>
 
@@ -67,30 +86,31 @@
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
 
+    window.onload = function(){
+      var twriteup;
+      var writeup;
+
+      jQuery.get('../assets/LG' + '1' + '/class/writeup.txt', function(data) {
+          data.replace(/\&quotes=([^&]*)\&/g, function(match, $1, offset, original) {
+            writeup = $1;
+
+            console.log($1);
+          });
+
+          data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
+            twriteup = $1;
+
+            console.log($1);
+          });
+
+          document.getElementById("tags").innerHTML = writeup;
+          document.getElementById("writeup").innerHTML = twriteup;
+          alert(twriteup + "\n\n" + writeup);
+    });
+    }
+
       var clickedMe = function(lg,num){
         console.log("Clicked");
-        var name;
-        var writeup;
-        var orgs;
-
-        jQuery.get('../assets/LG'+lg+'/writeups/sen'+num+'.txt', function(data) {
-              data.replace(/\&dude=([^&]*)\&/g, function(match, $1, offset, original) {
-                name = $1;
-                console.log($1);
-              });
-
-              data.replace(/\&writeup=([^&]*)\&/g, function(match, $1, offset, original) {
-                writeup = $1;
-                console.log($1);
-              });
-
-              data.replace(/\&orgs=([^&]*)\&/g, function(match, $1, offset, original) {
-                orgs = $1;
-                console.log($1);
-              });
-
-              alert(name + "\n\n" + writeup + "\n\n" + orgs);
-        });
       };
     </script>
 

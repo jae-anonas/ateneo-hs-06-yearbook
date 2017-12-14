@@ -48,6 +48,13 @@
           <img class="rounded border-1 py-1 px-1 bg-dark" src="../assets/LG1/class/lg4222.jpg" alt="">
         </div>
       </div>
+      <div class="row">
+        <div class="col-centered">
+          <h6 id="writeup">
+            TAGS
+          </h6>
+        </div>
+      </div>
 
       <div class="row">
           <div class="col-centered">
@@ -61,7 +68,8 @@
             TAGS
           </h6>
         </div>
-    </div>
+      </div>
+
     </div>
     <!-- /.container -->
 
@@ -95,6 +103,8 @@
             console.log($1);
           });
 
+          document.getElementById("tags").innerHTML = writeup;
+          document.getElementById("writeup").innerHTML = twriteup;
           alert(twriteup + "\n\n" + writeup);
     });
     }
